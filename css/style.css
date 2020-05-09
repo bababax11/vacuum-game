@@ -16,21 +16,23 @@ h1 {
     font-weight: 450;
 }
 
-.container0 {
+.container {
     position: relative;
     margin: 1em 0;
 }
 
 #camera {
+    top: 0;
     left: 0;
     transform: scaleX(-1);
+    width:0%
 }
 
 #from-video {
-    position: absolute;
     top: 0px;
     left: 0px;
     transform: scaleX(-1);
+    width:20%;
 }
 
 #canvas {

@@ -1,7 +1,7 @@
 const FPS = 30;
-const BOID_SIZE = 5;
+const BOID_SIZE = 10;
 const MAX_SPEED = 3;
-const VACUUM_SIZE = 15;
+const VACUUM_SIZE = 20;
 const MAX_N_BOIDS = 100;
 
 class Vacuum {
@@ -103,7 +103,7 @@ class GameMaster {
     this.ctx.fill();
     
     this.ctx.fillStyle = '#444';
-    this.ctx.font = '16px sans-serif';
+    this.ctx.font = '30px sans-serif';
     this.ctx.fillText(`count : ${this.boids.size}  point : ${this.vacuum.points}`, 20, 40);
   }
   moveBoids() {
@@ -212,12 +212,11 @@ class GameMaster {
   }
 }
 
-setTimeout(() => {
-  new Boids().init();
-}, 1000);
 
 let gm = new GameMaster();
-gm.init();
+setTimeout(() => {
+  gm.init();
+}, 1000);
 
 document.addEventListener('DOMContentLoaded', function () {
     /**
@@ -479,11 +478,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const positions = ctracker.getCurrentPosition();
         if (positions !== false) {
-            render_cliped_canvas(positions);
+            // render_cliped_canvas(positions);
             // gm.rightEye = positions[27];
             const [_x, _y] = positions[27];
-            gm.vacuum.x = window.innerWidth - 3 * _x;
-            gm.vacuum.y = window.innerHeight - 3 * _y;
+            gm.vacuum.x = window.innerWidth - _x;
+            gm.vacuum.y = window.innerHeight - _y;
             // gm.leftEye = positions[32];
         } else {
             clear_cliped_canvas();
