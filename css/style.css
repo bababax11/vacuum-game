@@ -35,8 +35,7 @@ h1 {
 
 #canvas {
     position: absolute;
-    height: 500px;
-    width: 1000px;
+    width: 50%;
 }
 
 #cliped {
