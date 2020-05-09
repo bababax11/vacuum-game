@@ -482,8 +482,8 @@ document.addEventListener('DOMContentLoaded', function () {
             render_cliped_canvas(positions);
             // gm.rightEye = positions[27];
             const [_x, _y] = positions[27];
-            gm.vacuum.x = window.innerWidth - _x;
-            gm.vacuum.y = window.innerHeight - _y;
+            gm.vacuum.x = window.innerWidth - 3 * _x;
+            gm.vacuum.y = window.innerHeight - 3 * _y;
             // gm.leftEye = positions[32];
         } else {
             clear_cliped_canvas();
